@@ -5,10 +5,10 @@ defmodule DiscussWeb.AuthController do
   alias DiscussWeb.User
   alias Discuss.Repo
 
-  def callback(%{assigns: %{ueberauth_auth: auth}} = conn, %{provider => provider} = params) do
+  def callback(%{assigns: %{ueberauth_auth: auth}} = conn, _params) do
     user_params = %{
       email: auth.info.email,
-      provider: provider,
+      provider: "github",
       token: auth.credentials.token
     }
     changeset = User.changeset(%User{}, user_params)
