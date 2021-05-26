@@ -13,3 +13,9 @@ Jump into your psql shell and create that user with the password you chose. You 
 -----
 
 Need to test above that line to see if those instructions are actually adequate.
+
+Create migration:
+`mix ecto.gen.migration name_of_migration`
+
+Migrate files to database:
+`mix ecto.migrate`
