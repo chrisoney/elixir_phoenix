@@ -4,7 +4,6 @@ defmodule DiscussWeb.Plugs.SetUser do
 
   alias Discuss.Repo
   alias DiscussWeb.User
-  alias DiscussWeb.Router.Helpers
 
   def init(_params) do
   end
@@ -17,7 +16,7 @@ defmodule DiscussWeb.Plugs.SetUser do
         assign(conn, :user, user)
         # conn.assigns.user => user struct
       true ->
-
+        assign(conn, :user, nil)
     end
   end
 end
