@@ -1,1 +1,11 @@
 <%= @topic.title %>
+
+<div class="input-field">
+  <textarea class="materialize-textarea"></textarea>
+  <button class="btn">Add Comment</button>
+  <ul class="collection"></ul>
+</div>
+
+<script type="module">
+  window.createSocket(<%= @topic.id %>)
+</script>
