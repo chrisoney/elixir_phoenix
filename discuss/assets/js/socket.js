@@ -81,9 +81,11 @@ const createSocket = (topicId) => {
   }
   
   function commentTemplate(comment) {
+    let email = comment.user ? comment.user.email : 'Anonymous'
     return `
       <li class="collection-item">
         ${comment.content}
+        <div class="secondary-content">${email}</div>
       </li>
       `;
   }
